@@ -1,0 +1,27 @@
+    <div class="letter" style="font-size:100px; position: absolute; top: 50%; left: 50%;"><span></span></div>
+    <div class="error" style="font-size:20px; color:red; position: absolute; top:60%; left: 60%; display:none;"><span>错误</span></div>
+    <script>
+          var letter = document.querySelector(".letter span");
+    function getRandomNumber(min,max){
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max-min+1)) + min;
+    }
+    var letterarray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+    var l = getRandomNumber(0,25);
+    var r = letterarray[l];
+    document.addEventListener('keydown', function(e) {
+        var er = document.querySelector('.error');
+        r = letter.innerHTML;
+        if (e.key == r) {
+                var l = getRandomNumber(0,25);
+                var r = letterarray[l];
+                letter.innerHTML = r;
+                er.style.display = 'none';
+        } else {
+            er.style.display = 'block';
+        }
+    })
+
+    </script>
