@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            width: 100%;
+        }
+        .login {
+            position: relative;
+            left:48%;
+        }
+        .loginbox {
+            display: none;
+            position: absolute;
+            height:300px;
+            width:500px;
+            background-color:white;
+            top:50%;
+            left:50%;
+            z-index:11;
+            transform: translate(-50%, -50%);
+        }
+        .close {
+            position: absolute;
+            left:480px;
+            width:20px;
+            height:20px;
+            text-align:center;
+            background-color:white;
+        }
+        .close:hover {
+            cursor: pointer;
+        }
+        .title {
+            margin-left:240px;
+            padding-top:10px;
+        }
+        .username {
+            margin-left:30px;
+            padding-top:50px;
+        }
+           .username input,.password input{
+            outline: none;
+            margin-left:10px;
+            width:350px;
+            height:25px;
+            caret-color:grey;
+            border:1px solid transparent;
+        }
+        .password {
+            padding-top:40px;
+            margin-left:15px;
+         }
+         .d input {
+            margin-left:48%;
+            margin-top:50px;
+            width:40px;
+            height:30px;
+
+         }
+    </style>
+    <script src="test.js"></script>
+
+</head>
+<body>
+<div class="login"><input type="button" value="点击登录"></div>
+<div class="loginbox">
+    <div class="close">X</div>
+    <div class="title">会员登录</div>
+    <div class="username"><span>用户名:</span><input type="text" placeholder="请输入用户名"></div>
+    <div class="password"><span>登录密码:</span><input type="password" placeholder="请输入用户密码"></div>
+    <div class = "d"><input type="button" value="登录"></div>
+</div>
+
+
+</body>
+</html>
