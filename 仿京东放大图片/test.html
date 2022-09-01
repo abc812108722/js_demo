@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            float: left;
+            position:relative;
+            width: 400px;
+            height: 300px;
+        }
+        .mask {
+            display:none;
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            opacity: 0.5;
+        }
+        .detail {
+            position:relative;
+            display:none;
+            margin-left: 50px;
+            float: left;
+            height: 500px;
+            width:500px;
+            overflow: hidden;
+        }
+        .detail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="test.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <img src="upload/lb.png" width="400px" height="300px">
+        <div class="mask"></div>
+    </div>
+    <div class="detail">
+        <img src="upload/lb.png" >
+    </div>
+
+</body>
+</html>
