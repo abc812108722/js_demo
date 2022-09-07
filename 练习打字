@@ -1,7 +1,7 @@
     <div class="letter" style="font-size:100px; position: absolute; top: 50%; left: 50%;"><span></span></div>
     <div class="error" style="font-size:20px; color:red; position: absolute; top:60%; left: 60%; display:none;"><span>错误</span></div>
     <script>
-          var letter = document.querySelector(".letter span");
+    var letter = document.querySelector(".letter span");
     function getRandomNumber(min,max){
         min = Math.ceil(min);
         max = Math.floor(max);
