@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 200px;
+            outline: none;
+            border:2px solid lightslategrey
+        }
+        .box {
+            width: 200px;
+            height: auto;
+            background-color: lightgray;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"> 
+    <div class="box"></div>
+   
+    <script>
+        let box = document.querySelector('.box');
+        //回调函数
+        function b(data){
+            for(let i=0; i<= data.result.length - 1; i++){
+                let d = document.createElement('div');
+                d.innerHTML = data.result[i].slice(',')[0];
+                box.append(d);
+            }
+        }
+        let inp = document.querySelector('input');
+        //封装jsonp
+        function s(kw) {
+            let ss = document.createElement('script');
+            ss.src = "https://suggest.taobao.com/sug?q="+ kw +"&callback=b";
+            document.body.append(ss);
+            document.body.removeChild(ss);
+        }
+        inp.addEventListener('keyup', (e) => {
+            let bkey = document.querySelector('input').value.trim();
+            let bkey1 = bkey.substr(0, bkey.length - 1);
+            let key = bkey1 + e.key.trim();
+            if(box.hasChildNodes()){
+                box.innerHTML = '';
+                s(key);
+            }else{
+                s(key);
+            }
+        })
+
+
+        
+    </script>
+    
+    
+</body>
+</html>
