@@ -43,9 +43,14 @@
             document.body.removeChild(ss);
         }
         inp.addEventListener('keyup', (e) => {
-            let bkey = document.querySelector('input').value.trim();
-            let bkey1 = bkey.substr(0, bkey.length - 1);
-            let key = bkey1 + e.key.trim();
+            if(e.key == "Backspace"){
+                var key = document.querySelector('input').value.trim();
+            }else{
+                var bkey = document.querySelector('input').value.trim();
+                var bkey1 = bkey.substr(0, bkey.length - 1);
+                var key = bkey1 + e.key.trim();
+            }
+ 
             if(box.hasChildNodes()){
                 box.innerHTML = '';
                 s(key);
